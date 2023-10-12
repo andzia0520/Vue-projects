@@ -1,0 +1,31 @@
+<template>
+	<li>
+		<h2>{{ friend.name }}</h2>
+		<button @click="toggleDetails">Show details</button>
+		<ul v-if="detailsVisible">
+			<li><strong>Phone: </strong> {{ friend.phone }}</li>
+			<li><strong>Email: </strong> {{ friend.email }}</li>
+		</ul>
+	</li>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			detailsVisible: false,
+			friend: {
+				id: 'anna',
+				name: 'Anna Wanna',
+				phone: '012 345 678',
+				email: 'email@email',
+			},
+		};
+	},
+	methods: {
+		toggleDetails() {
+			this.detailsVisible = !this.detailsVisible;
+		},
+	},
+};
+</script>
