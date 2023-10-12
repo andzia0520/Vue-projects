@@ -2,8 +2,9 @@
 	<section>
 		<header><h1>My friends</h1></header>
 		<ul>
-			<friend-contact></friend-contact>
-			<friend-contact></friend-contact>
+			<friend-contact name="Anna Wanna" phone-number="012 345 678" email="email@email"></friend-contact>
+			
+			<friend-contact name="Julie jones" phone-number="111 222 333" email="email@email"></friend-contact>
 		</ul>
 	</section>
 </template>
