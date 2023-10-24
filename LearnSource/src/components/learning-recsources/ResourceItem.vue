@@ -1,15 +1,15 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <h3>{{ title }}</h3>
         <button>Delete</button>
       </header>
-    </div>
-    <p>{{ description }}</p>
-    <nav>
-      <a :href="link">View Resource</a>
-    </nav>
+      <p>{{ description }}</p>
+      <nav>
+        <a :href="link">View Resource</a>
+      </nav>
+    </base-card>
   </li>
 </template>
 
@@ -21,50 +21,32 @@ export default {
 
 <style scoped>
 li {
-  margin: 0 auto;
-  margin-bottom: 2em;
-  height: 10rem;
-  width: 40rem;
-  list-style-type: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 15px;
-}
-
-div {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  max-width: 40rem;
 }
 
 header {
-  position: relative;
-  margin: 0 10px;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h3 {
-  display: inline-block;
-  font-size: 1.3em;
-  font-weight: bold;
-  color: black;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
 }
 
-button {
-  position: absolute;
-  right: 10px;
-  top: 20px;
-  padding: 1px;
-  border: none;
-  color: purple;
-  background: none;
+p {
+  margin: 0.5rem 0;
 }
 
 a {
-  margin: 5px 10px;
-  color: brown;
   text-decoration: none;
+  color: #ce5c00;
 }
-p {
-  margin: 5px 10px;
-  font-size: 1em;
+
+a:hover,
+a:active {
+  color: #c89300;
 }
 </style>
