@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{invalid: userNameValidity === 'invalid'}">
+    <div
+      class="form-control"
+      :class="{ invalid: userNameValidity === 'invalid' }"
+    >
       <label for="user-name">Your Name</label>
       <input
         id="user-name"
@@ -14,6 +17,10 @@
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
       <input id="age" name="age" type="number" v-model="userAge" />
+    </div>
+
+    <div class="form-control">
+      <rating-controls v-model="rating"></rating-controls>
     </div>
     <div class="form-control">
       <label for="referrer">How did you hear about us?</label>
@@ -101,7 +108,11 @@
 </template>
 
 <script>
+import RatingControls from './RatingControls.vue';
+
 export default {
+  components: { RatingControls },
+
   data() {
     return {
       userName: '',
@@ -110,21 +121,23 @@ export default {
       interest: [],
       how: null,
       terms: false,
+      rating: null,
       userNameValidity: 'pending',
     };
   },
   methods: {
     submitForm() {
-      console.log('UserName: ' + this.userName);
+      // console.log('UserName: ' + this.userName);
       this.userName = '';
 
-      console.log(this.userAge);
-      console.log(this.referrer);
-      console.log(this.interest);
-      console.log(this.how);
+      // console.log(this.userAge);
+      // console.log(this.referrer);
+      // console.log(this.interest);
+      // console.log(this.how);
 
-      console.log(this.terms);
-
+      // console.log(this.terms);
+      console.log(this.rating);
+      this.rating = null;
       // this.userName = event.target.value;
       // console.log('UserName: ' + this.userName);
       // event.target.value = '';
